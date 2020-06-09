@@ -1,13 +1,18 @@
 #pragma once
 
+#include <GLFW/glfw3.h>
+
 #include "mat4x4.h"
 #include "vec3.h"
+#include "vec2.h"
 
 class Camera
 {
 private://variables
 	mat4x4 mViewMatrix;
 	mat4x4 mProjectionMatrix;
+
+	vec2 mMousePosition;
 
 	vec3 mPosition	;	//position of camera
 	vec3 mFocusPoint;	//where the camera is looking
@@ -19,6 +24,7 @@ private://variables
 
 public://functions
 	Camera();
+	Camera(GLFWwindow *window);
 	~Camera();
 
 	void initialize();
@@ -34,7 +40,9 @@ public://functions
 	mat4x4 getViewMatrix()		 const { return mViewMatrix;		}
 	mat4x4 getProjectionMatrix() const { return mProjectionMatrix;	}
 
+
 private://functions
 	void lookAt();
+
 };
 

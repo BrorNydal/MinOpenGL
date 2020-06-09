@@ -3,11 +3,10 @@
 
 
 Camera::Camera()
-	:	mPosition(GlobalWorldSettings::WorldUpVector), mFocusPoint(vec3::ZeroVector())
+	:	mMousePosition(vec2::ZeroVector()), mPosition(GlobalWorldSettings::WorldUpVector), mFocusPoint(vec3::ZeroVector())
 {
 
 }
-
 
 Camera::~Camera()
 {
